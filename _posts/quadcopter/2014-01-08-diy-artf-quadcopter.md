@@ -8,7 +8,6 @@ tags:
 - esc
 - simonk
 - motor
-tumblr_url: https://robokitchen.tumblr.com/post/72602724137/diy-artf-quadcopter
 ---
 <figure class="tmblr-full" data-orig-height="333" data-orig-width="500" data-orig-src="https://64.media.tumblr.com/d4f44c1c950126f329c0202d8f8a1384/tumblr_inline_mz1z0lxMau1snd83q.jpg"><img alt="image" src="https://64.media.tumblr.com/38c950bb651dea4a939e9742e266d69b/tumblr_inline_pit4ctSBzn1snd83q_540.jpg" data-orig-height="333" data-orig-width="500" data-orig-src="https://64.media.tumblr.com/d4f44c1c950126f329c0202d8f8a1384/tumblr_inline_mz1z0lxMau1snd83q.jpg"></figure>
 
@@ -31,7 +30,7 @@ I separately tested each ESC connected to the throttle channel of a receiver. I 
 **Normal startup**
 
 - Connect battery with throttle stick at min
-- ESC emits a long beep, we’re ready to go
+- ESC emits a long beep, we're ready to go
 
 **Calibration startup**
 
@@ -39,7 +38,6 @@ I separately tested each ESC connected to the throttle channel of a receiver. I 
 - ESC emits a short beep to indicate it saved the max throttle position
 - Move throttle stick to min
 - ESC emits two short beeps to indicate it saved the min throttle position
-- ESC emits a long beep, we’re ready to go
+- ESC emits a long beep, we're ready to go
 
 After the startup sequence the throttle stick controls the speed of the attached motor. Back to working on the software now!
-

@@ -6,7 +6,6 @@ tags:
 - stripboard
 - ppmsum
 - rc
-tumblr_url: https://robokitchen.tumblr.com/post/65192427388/ppm-sum-stripboard-experiments
 ---
 I got a 6 channels OrangeRX radio receiver for £7.99 on eBay.
 
@@ -14,7 +13,7 @@ The way RC receivers work is that each channel emits a pulse which lasts between
 
 In order to decode the 6 channels we could use 6 Arduino pins. There is however a trick with the OrangeRX receiver and many others. Each channel emits its pulse at a different time. The 20ms cycle is divided in eight 2.5ms slots, and each slot is assigned to a channel. We could merge all the channels through an OR gate and use only one Arduino pin to decode them all. The merged signal is called the PPM sum.
 
-I could have purchased a ready-made PPM encoder for less than £10, but I thought it was an opportunity to experiment with hardware. I ordered an [8-inputs OR gate](http://www.spiratronics.com/data/6645.pdf) and a stripboard. I had never used a stripboard, yay!
+I could have purchased a ready-made PPM encoder for less than £10, but I thought it was an opportunity to experiment with hardware. I ordered an [8-inputs OR gate](https://www.spiratronics.com/data/6645.pdf) and a stripboard. I had never used a stripboard, yay!
 
 I first experimented on the breadboard. I discovered that **all** the inputs of the OR gate have to be connected. If not the output oscillates. I connected the two extra inputs to the ground and everything worked as expected.
 
@@ -38,5 +37,4 @@ With this in mind I created a new version of the stripboard.
 
 I swapped the two bottom tracks and moved the PPM output to provide servo wire compatibility on the Arduino side. I also added a pin on the receiver side to provide more friction and allow the use of 3 adjacent servo wires. The wiring is now much better looking and there is enough friction to secure the wires in place.
 
-I’m glad I didn’t purchase an off the shelf PPM sum board, this was a great introduction to DIY electronics.
-
+I'm glad I didn't purchase an off the shelf PPM sum board, this was a great introduction to DIY electronics.

@@ -7,17 +7,16 @@ tags:
 - vector
 - rotation
 - axisangle
-tumblr_url: https://robokitchen.tumblr.com/post/68484965839/finding-the-angle-axis-rotation-between-two-vectors
 ---
-In this post we explain a method to find the [angle-axis](http://en.wikipedia.org/wiki/Axis%E2%80%93angle_representation) representation of the “shortest arc” rotation which transforms $\vec{u}$ into $\vec{v}$. The vectors are non-null, non-collinear, and the coordinate system is [right-handed](http://en.wikipedia.org/wiki/Right-hand_rule#Right-handed_and_left-handed_coordinates).
+In this post we explain a method to find the [angle-axis](https://en.wikipedia.org/wiki/Axis%E2%80%93angle_representation) representation of the "shortest arc" rotation which transforms $\vec{u}$ into $\vec{v}$. The vectors are non-null, non-collinear, and the coordinate system is [right-handed](https://en.wikipedia.org/wiki/Right-hand_rule#Right-handed_and_left-handed_coordinates).
 
-The method is simple enough but I’m writing it here because I couldn’t find it anywhere else.
+The method is simple enough but I'm writing it here because I couldn't find it anywhere else.
 
-Let’s call $\theta$ the angle between $\vec{u}$ and $\vec{v}$. By definition $0 \< \theta \< \pi$.
+Let's call $\theta$ the angle between $\vec{u}$ and $\vec{v}$. By definition $0 \< \theta \< \pi$.
 
-We are looking for the vector $\vec{a}$ orthogonal to the plane containing $\vec{u}$ and $\vec{v}$, which has a norm of $\theta$, and which points in the direction such that the rotation from $\vec{u}$ to $\vec{v}$ follows the [right-hand rule](http://en.wikipedia.org/wiki/Right-hand_rule#Direction_associated_with_a_rotation).
+We are looking for the vector $\vec{a}$ orthogonal to the plane containing $\vec{u}$ and $\vec{v}$, which has a norm of $\theta$, and which points in the direction such that the rotation from $\vec{u}$ to $\vec{v}$ follows the [right-hand rule](https://en.wikipedia.org/wiki/Right-hand_rule#Direction_associated_with_a_rotation).
 
-Let’s define:
+Let's define:
 
 \[\vec{t} = \frac{\vec{u} \times \vec{v}}{\|\vec{u}\| \|\vec{v}\|}\tag{1}\]
 

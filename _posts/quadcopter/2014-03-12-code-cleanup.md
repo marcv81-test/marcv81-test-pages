@@ -6,9 +6,8 @@ tags:
 - arduino
 - imu
 - cleanup
-tumblr_url: https://robokitchen.tumblr.com/post/79402586095/code-cleanup
 ---
-I uncluttered the repository a bit. I removed the sketches which were no longer useful, and more importantly I [merged all the IMU-related sketches and scripts](https://github.com/marcv81/robokitchen/commit/d5a63040bf637d052b2a674e64d2160c906286ae) together. To visualise any of the IMU data just upload IMUTest.
+I uncluttered the repository a bit. I removed the sketches which were no longer useful, and more importantly I [merged all the IMU-related sketches and scripts](https://github.com/marcv81/quadcopter/commit/d5a63040bf637d052b2a674e64d2160c906286ae) together. To visualise any of the IMU data just upload IMUTest.
 
 - python/Orientation.py: displays the IMU forward and down vectors in the fixed reference frame
 - python/Acceleration.py: displays the acceleration vector in the IMU reference frame
@@ -27,4 +26,3 @@ The steps to calibrate the magnetometer are:
 - Run: _python Magnetometer.py \> ../../octave/magnet\_calibration/data.csv_
 - In octave/magnet\_calibration run: _octave -q generate\_header.m_
 - Upload sketch-test/IMUTest with the output of the previous command in the config.h
-

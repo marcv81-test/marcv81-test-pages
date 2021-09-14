@@ -8,15 +8,14 @@ tags:
 - controller
 - spi
 - pullup
-tumblr_url: https://robokitchen.tumblr.com/post/101880188610/ps2-controller-interface
 ---
-A few [articles](http://www.billporter.info/2010/06/05/playstation-2-controller-arduino-library-v1-0/) and [libraries](http://playground.arduino.cc/Main/AnalogPSXLibrary) explain how to interface an Arduino with a PS2 controller. None of them worked for me because they didn’t explain how to connect the gamepad to the microcontroller, but I didn’t realise that so I started a [new implementation](https://github.com/marcv81/robokitchen/tree/021c74899a0ac0c289ffa5c149bde3a148230bc4/libraries/PS2Controller) from scratch.
+A few [articles](https://www.billporter.info/2010/06/05/playstation-2-controller-arduino-library-v1-0/) and [libraries](https://playground.arduino.cc/Main/AnalogPSXLibrary) explain how to interface an Arduino with a PS2 controller. None of them worked for me because they didn't explain how to connect the gamepad to the microcontroller, but I didn't realise that so I started a [new implementation](https://github.com/marcv81/quadcopter/tree/021c74899a0ac0c289ffa5c149bde3a148230bc4/libraries/PS2Controller) from scratch.
 
-[Curious Inventor](http://store.curiousinventor.com/guides/PS2/) was my main source of information.
+[Curious Inventor](https://store.curiousinventor.com/guides/PS2/) was my main source of information.
 
 **Technical decisions**
 
-The PS2 controller uses a variant of the the [SPI protocol](http://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus). We can either bitbang the protocol or use the AVR hardware implementation.
+The PS2 controller uses a variant of the the [SPI protocol](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus). We can either bitbang the protocol or use the AVR hardware implementation.
 
 Bitbang SPI pros:
 
@@ -32,7 +31,7 @@ The only acceptable excuse to bitbang the protocol is if you need to use some of
 
 **Connection**
 
-The PS2 controllers are reported to work around 3.3V when connected to the console. This is obviously the preferred supply voltage. However both my original and aftermarket controllers seem to work fine at 5V so I didn’t bother with a level converter.
+The PS2 controllers are reported to work around 3.3V when connected to the console. This is obviously the preferred supply voltage. However both my original and aftermarket controllers seem to work fine at 5V so I didn't bother with a level converter.
 
 The SPI protocol requires 4 pins. On the Arduino Uno/Nano the SPI hardware pins are as follows.
 
@@ -41,7 +40,7 @@ The SPI protocol requires 4 pins. On the Arduino Uno/Nano the SPI hardware pins 
 - MISO: pin 12
 - CLK: pin 13
 
-MISO needs a pull-up resistor. The integrated Arduino pull-up is said to be more than 20k which is way too high for this application. I used a 1k external resistor. The pull-up resistor was the reason I had no success with other people’s libraries, but I only realised too late.
+MISO needs a pull-up resistor. The integrated Arduino pull-up is said to be more than 20k which is way too high for this application. I used a 1k external resistor. The pull-up resistor was the reason I had no success with other people's libraries, but I only realised too late.
 
 The PS2 controller SPI wiring is as follows.
 

@@ -11,11 +11,10 @@ tags:
 - ubuntu server
 - ubuntu
 - virtualbox
-tumblr_url: https://robokitchen.tumblr.com/post/98340595745/arduino-continuous-integration
 ---
-Arduino projects should not require continuous integration. Most of them define a single sketch with only a few files in one folder: it’s easy to verify that the code compiles, and a developer is unlikely to miss files while committing. This said Robokitchen has configurable libraries reused across different sketches. It would be good to check that changes in the libraries don’t break any of the sketches which depend on them.  
+Arduino projects should not require continuous integration. Most of them define a single sketch with only a few files in one folder: it's easy to verify that the code compiles, and a developer is unlikely to miss files while committing. This said Robokitchen has configurable libraries reused across different sketches. It would be good to check that changes in the libraries don't break any of the sketches which depend on them.  
   
-The Linux version of the Arduino IDE 1.5.2+ supports command line compilation. We’re going to set up a Jenkins server to compile all the sketches whenever a change is pushed to GitHub. We use VirtualBox and Ubuntu Server 14.04.1 LTS, but any other virtualisation software or distribution should work equally well.  
+The Linux version of the Arduino IDE 1.5.2+ supports command line compilation. We're going to set up a Jenkins server to compile all the sketches whenever a change is pushed to GitHub. We use VirtualBox and Ubuntu Server 14.04.1 LTS, but any other virtualisation software or distribution should work equally well.  
   
 **VM setup**  
   
@@ -30,17 +29,17 @@ After restarting we should be able to SSH the machine on 192.168.56.10. After co
   
 **Arduino IDE headless**  
   
-Let’s now download and install the latest Arduino IDE.  
+Let's now download and install the latest Arduino IDE.  
   
-wget [http://downloads.arduino.cc/arduino-1.5.7-linux64.tgz](http://downloads.arduino.cc/arduino-1.5.7-linux64.tgz)  
+wget [https://downloads.arduino.cc/arduino-1.5.7-linux64.tgz](https://downloads.arduino.cc/arduino-1.5.7-linux64.tgz)  
 tar -xvf arduino-1.5.7-linux64.tgz  
 sudo mv arduino-1.5.7/ /usr/local/  
 sudo chown root:root -R /usr/local/arduino-1.5.7/  
   
-Let’s clone the Robokitchen repository and compile a test sketch.  
+Let's clone the Robokitchen repository and compile a test sketch.  
   
 sudo apt-get install git  
-git clone [https://github.com/marcv81/robokitchen.git](https://github.com/marcv81/robokitchen.git)  
+git clone [https://github.com/marcv81/quadcopter.git](https://github.com/marcv81/quadcopter.git)  
 /usr/local/arduino-1.5.7/arduino --verify robokitchen/sketches/Quadcopter/Quadcopter.ino  
   
 Bad news, it does not work. As explained in [this issue](https://github.com/arduino/Arduino/issues/1981) the Arduino command line interface still requires a X server to work. No problem we can install Xvfb as a stub.  
@@ -65,7 +64,7 @@ Once we restart we can export DISPLAY=:99 and try to compile again. Appart from 
   
 **Maven**  
   
-I quite like the combination of Maven and Jenkins: the modules are displayed nicely. Let’s define our [sketches as modules of a parent project](https://github.com/marcv81/robokitchen/commit/e8f60d2aaa77a4623df398ac3cff0ceb89875ca1). For portability we rely on the ARDUINO\_HOME environment variable. We can now install Maven and compile all the sketches at once.  
+I quite like the combination of Maven and Jenkins: the modules are displayed nicely. Let's define our [sketches as modules of a parent project](https://github.com/marcv81/quadcopter/commit/e8f60d2aaa77a4623df398ac3cff0ceb89875ca1). For portability we rely on the ARDUINO\_HOME environment variable. We can now install Maven and compile all the sketches at once.  
   
 sudo apt-get install maven  
 cd robokitchen/sketches  
@@ -75,7 +74,7 @@ mvn compile
   
 **Jenkins**  
   
-We are going to deploy Jenkins in Tomcat. The Arduino builds should be lightweight, but it’s a good practice to set the tomcat7 home directory to a partition with enough space.  
+We are going to deploy Jenkins in Tomcat. The Arduino builds should be lightweight, but it's a good practice to set the tomcat7 home directory to a partition with enough space.  
   
 sudo service tomcat7 stop  
 sudo mkdir /home/tomcat7  
@@ -83,20 +82,20 @@ sudo chown -R tomcat7:tomcat7 /home/tomcat7/
 sudo usermod -d /home/tomcat7 -m tomcat7  
 sudo service tomcat7 start  
   
-Let’s now download and deploy Jenkins.  
+Let's now download and deploy Jenkins.  
   
-wget [http://mirrors.jenkins-ci.org/war-stable/latest/jenkins.war](http://mirrors.jenkins-ci.org/war-stable/latest/jenkins.war)  
+wget [https://mirrors.jenkins-ci.org/war-stable/latest/jenkins.war](https://mirrors.jenkins-ci.org/war-stable/latest/jenkins.war)  
 sudo chown tomcat7:tomcat7 jenkins.war  
 sudo mv jenkins.war /var/lib/tomcat7/webapps/  
   
-The Jenkins URL is [http://192.168.56.10:8080/jenkins](http://192.168.56.10:8080/jenkins). Let’s first go to Manage Jenkins \> Configure System \> Global properties and define the following environment variables.
+The Jenkins URL is [https://192.168.56.10:8080/jenkins](https://192.168.56.10:8080/jenkins). Let's first go to Manage Jenkins \> Configure System \> Global properties and define the following environment variables.
 
 - DISPLAY=:99
 - ARDUINO\_HOME=/usr/local/arduino-1.5.7/
 
 On the same screen we should define a Maven installation. On Ubuntu Server 14.04.1 LTS the default is Maven 3.0.5 installed in /usr/share/maven/. Now is a good time to install the GitHub plugin and restart Jenkins. We finally have all we need to create a Maven job. The main parameters are as follows.
 
-- Git repository URL: [https://github.com/marcv81/robokitchen.git](https://github.com/marcv81/robokitchen.git)
+- Git repository URL: [https://github.com/marcv81/quadcopter.git](https://github.com/marcv81/quadcopter.git)
 - Root POM: sketches/pom.xml
 - Goals: clean compile
 

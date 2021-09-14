@@ -1,6 +1,6 @@
 ---
 layout: post
-title: i made a stripboard to replace the breadboard in
+title: Stripboard
 date: '2014-01-06T00:32:00+08:00'
 tags:
 - arduino

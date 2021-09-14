@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Putting things together - Part 1: IMU'
+title: 'Integration - Part 1: IMU'
 date: '2014-04-24T02:26:09+08:00'
 tags:
 - quadcopter

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: no title
+title: Moment of inertia (roll/pitch)
 date: '2014-10-09T22:35:00+08:00'
 tags:
 - moment of inertia
@@ -9,9 +9,7 @@ tags:
 - experiment
 - quadcopter
 ---
-<video id="embed-613f4f5142710931276881" class="crt-video crt-skin-default" width="400" height="400" poster="https://64.media.tumblr.com/tumblr_nd73mpCttR1sjwnlx_frame1.jpg" preload="none" muted data-crt-video data-crt-options='{"autoheight":null,"duration":60,"hdUrl":false,"filmstrip":{"url":"https://33.media.tumblr.com/previews/tumblr_nd73mpCttR1sjwnlx_filmstrip.jpg","width":"200","height":"200"}}' crossorigin="anonymous">
-    <source src="https://va.media.tumblr.com/tumblr_nd73mpCttR1sjwnlx_480.mp4" type="video/mp4">
-</source></video>  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XPmZ9xbgVds" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 **Moment of inertia with respect to the roll/pitch axes**
 

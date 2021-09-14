@@ -1,6 +1,6 @@
 ---
 layout: post
-title: i rebuilt the frame with two 150x2mm perspex
+title: Frame rebuild
 date: '2014-04-06T22:38:33+08:00'
 tags:
 - quadcopter

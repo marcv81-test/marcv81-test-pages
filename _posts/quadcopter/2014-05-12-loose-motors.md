@@ -1,6 +1,6 @@
 ---
 layout: post
-title: the motors nuts were coming loose because of the
+title: Loose motors
 date: '2014-05-12T17:44:00+08:00'
 tags:
 - nut

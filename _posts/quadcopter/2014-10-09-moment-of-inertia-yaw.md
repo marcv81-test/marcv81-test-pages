@@ -1,6 +1,6 @@
 ---
 layout: post
-title: no title
+title: Moment of inertia (yaw)
 date: '2014-10-09T23:35:22+08:00'
 tags:
 - moment of inertia
@@ -9,9 +9,7 @@ tags:
 - experiment
 - quadcopter
 ---
-<video id="embed-613f4f5141c69691192261" class="crt-video crt-skin-default" width="400" height="400" poster="https://64.media.tumblr.com/tumblr_nd77u9K6BO1sjwnlx_frame1.jpg" preload="none" muted data-crt-video data-crt-options='{"autoheight":null,"duration":81,"hdUrl":false,"filmstrip":{"url":"https://31.media.tumblr.com/previews/tumblr_nd77u9K6BO1sjwnlx_filmstrip.jpg","width":"200","height":"200"}}' crossorigin="anonymous">
-    <source src="https://va.media.tumblr.com/tumblr_nd77u9K6BO1sjwnlx_480.mp4" type="video/mp4">
-</source></video>  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PELF9G5HnHE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 **Moment of inertia with respect to the yaw axis**
 

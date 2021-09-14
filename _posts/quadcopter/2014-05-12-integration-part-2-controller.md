@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Putting things together - Part 2: Controller'
+title: 'Integration - Part 2: Controller'
 date: '2014-05-12T17:11:00+08:00'
 tags:
 - quadcopter

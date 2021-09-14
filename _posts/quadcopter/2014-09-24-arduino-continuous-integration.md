@@ -101,4 +101,6 @@ On the same screen we should define a Maven installation. On Ubuntu Server 14.04
 
 One run this job should lead to a nice screen full of blue balls.
 
-<figure data-orig-height="286" data-orig-width="183" data-orig-src="https://64.media.tumblr.com/09e2e2410637060a8c0d5a5dd58feb73/tumblr_inline_ncfg9fPFI81snd83q.jpg"><img alt="image" src="https://64.media.tumblr.com/09e2e2410637060a8c0d5a5dd58feb73/tumblr_inline_pjzvrfZle51snd83q_540.jpg" data-orig-height="286" data-orig-width="183" data-orig-src="https://64.media.tumblr.com/09e2e2410637060a8c0d5a5dd58feb73/tumblr_inline_ncfg9fPFI81snd83q.jpg"></figure>
+{:refdef: style="text-align: center;"}
+![image]({{ site.baseimg }}/images/quadcopter/2014-09-24-arduino-continuous-integration-1.jpg)
+{:refdef}

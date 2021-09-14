@@ -21,7 +21,9 @@ The labels read: "Power: 3.6-6V" and "Level: 3.3V". The Internet says it works w
 
 This worked well on the breadboard so I made a tiny stripboard. The track under the 1k ohm resistor is cut.
 
-<figure class="tmblr-full" data-orig-height="179" data-orig-width="350" data-orig-src="https://64.media.tumblr.com/9489ec9772d755f7d277ce7733ec01cb/tumblr_inline_n0ovypXJJj1snd83q.jpg"><img alt="image" src="https://64.media.tumblr.com/9489ec9772d755f7d277ce7733ec01cb/tumblr_inline_pk0xnjPISt1snd83q_540.jpg" data-orig-height="179" data-orig-width="350" data-orig-src="https://64.media.tumblr.com/9489ec9772d755f7d277ce7733ec01cb/tumblr_inline_n0ovypXJJj1snd83q.jpg"></figure>
+{:refdef: style="text-align: center;"}
+![image]({{ site.baseimg }}/images/quadcopter/2014-02-08-jy-mcu-hc-06-bluetooth-module-1.jpg)
+{:refdef}
 
 **Note:** I measured the voltage at the bridge and got 2.8V instead of 3.4V. Eeew, it turns out that the 5V pins of the Arduino Nano barely provide 4V when powered from USB. I could reproduce that with both a genuine Arduino board (possibly fried from previous experiments) and a clone (possibly poor quality). I checked the PC USB ports voltage, no problem there. I'm not too sure what's going on but it shouldn't happen when we run off batteries and regulated 5V, so let's not worry about it.
 
@@ -31,7 +33,9 @@ To configure the Bluetooth module we have to send it AT commands through the TTL
 
 After connecting the Bluetooth module to the software serial port we can send it AT commands from the Arduino serial monitor. We can rename the device with AT+NAMERobokitchen and change the Bluetooth PIN with AT+PIN0000. This works well and I'm able to pair with the device. By default the module runs at 9600 bauds. We can increase the speed to 115200 bauds with AT+BAUD8. After that the communication won't synchronise until we update the serial speed and upload the sketch again. As mentioned above the received data is invalid at 115200 bauds, but we can still send commands and return to 9600 bauds with AT+BAUD4 if required.
 
-<figure class="tmblr-full" data-orig-height="327" data-orig-width="500" data-orig-src="https://64.media.tumblr.com/9e5611f7c5e7bb66d44bfd421a8678f0/tumblr_inline_n0p9v5jXK81snd83q.jpg"><img alt="image" src="https://64.media.tumblr.com/246b4773732a6ae60e4a2e504e0b283b/tumblr_inline_pk0xnjPElU1snd83q_540.jpg" data-orig-height="327" data-orig-width="500" data-orig-src="https://64.media.tumblr.com/9e5611f7c5e7bb66d44bfd421a8678f0/tumblr_inline_n0p9v5jXK81snd83q.jpg"></figure>
+{:refdef: style="text-align: center;"}
+![image]({{ site.baseimg }}/images/quadcopter/2014-02-08-jy-mcu-hc-06-bluetooth-module-2.jpg)
+{:refdef}
 
 **Integration**
 

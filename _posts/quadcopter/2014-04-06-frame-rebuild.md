@@ -6,7 +6,9 @@ tags:
 - quadcopter
 - frame
 ---
- ![](https://64.media.tumblr.com/fcf9f52294f7e0db4a23e659b8c5a71d/tumblr_n3mpg9GvP41sjwnlxo1_1280.jpg)  
+{:refdef: style="text-align: center;"}
+![image]({{ site.baseimg }}/images/quadcopter/2014-04-06-frame-rebuild-1.jpg)
+{:refdef}
 
 I rebuilt the frame with two 150x2mm perspex sheets rather than a single 100x5mm one. I used M3 bolts rather than M5. It measures 470mm motor to motor, I dremeled the arms to size.
 

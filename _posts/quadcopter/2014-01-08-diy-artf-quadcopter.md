@@ -9,7 +9,9 @@ tags:
 - simonk
 - motor
 ---
-<figure class="tmblr-full" data-orig-height="333" data-orig-width="500" data-orig-src="https://64.media.tumblr.com/d4f44c1c950126f329c0202d8f8a1384/tumblr_inline_mz1z0lxMau1snd83q.jpg"><img alt="image" src="https://64.media.tumblr.com/38c950bb651dea4a939e9742e266d69b/tumblr_inline_pit4ctSBzn1snd83q_540.jpg" data-orig-height="333" data-orig-width="500" data-orig-src="https://64.media.tumblr.com/d4f44c1c950126f329c0202d8f8a1384/tumblr_inline_mz1z0lxMau1snd83q.jpg"></figure>
+{:refdef: style="text-align: center;"}
+![image]({{ site.baseimg }}/images/quadcopter/2014-01-08-diy-artf-quadcopter-1.jpg)
+{:refdef}
 
 eBay basket:
 
@@ -23,7 +25,9 @@ eBay basket:
 
 The cost is £105.27 in total, or £24.53 for the frame only. In comparison an ARTF DJI F450 costs £130-140, or £30-35 for the frame only.
 
-<figure class="tmblr-full" data-orig-height="334" data-orig-width="500" data-orig-src="https://64.media.tumblr.com/c3db6ce24ef242121cdd0cf927667768/tumblr_inline_mz1y7thshu1snd83q.jpg"><img alt="image" src="https://64.media.tumblr.com/a0c4a952402b559456b88ba698c42a35/tumblr_inline_pit4ctM3Cx1snd83q_540.jpg" data-orig-height="334" data-orig-width="500" data-orig-src="https://64.media.tumblr.com/c3db6ce24ef242121cdd0cf927667768/tumblr_inline_mz1y7thshu1snd83q.jpg"></figure>
+{:refdef: style="text-align: center;"}
+![image]({{ site.baseimg }}/images/quadcopter/2014-01-08-diy-artf-quadcopter-2.jpg)
+{:refdef}
 
 I separately tested each ESC connected to the throttle channel of a receiver. I successfully went through the following initialisation sequences described in [the doc](https://github.com/sim-/tgy/blob/master/README.md).
 

@@ -24,6 +24,8 @@ At this stage adding support for the rumble motors is trivial. We just need to c
 
 The implementation uses a lot of delays, one of which blocks the microcontroller for 4ms at a time. This is inefficient and we may want to run other code while the gamepad is getting ready. I [divided the configuration sequence in different states](https://github.com/marcv81/quadcopter/commit/0cfce8f22805741d96f2f8d3c08c19aa2478f50f) and implemented them as a [finite-state machine](https://en.wikipedia.org/wiki/Finite-state_machine). Each call to update() checks that enough time has elapsed and runs the next command in the sequence according to the following flowchart.
 
-<figure class="tmblr-full" data-orig-height="500" data-orig-width="500" data-orig-src="https://64.media.tumblr.com/7517a2d3d235b3da5815ea5a9593f55d/tumblr_inline_nftl2mmIvz1snd83q.jpg"><img alt="image" src="https://64.media.tumblr.com/78964a1e76d0a9ab6e07221a7181cd0a/tumblr_inline_pcka91u7r61snd83q_540.jpg" data-orig-height="500" data-orig-width="500" data-orig-src="https://64.media.tumblr.com/7517a2d3d235b3da5815ea5a9593f55d/tumblr_inline_nftl2mmIvz1snd83q.jpg"></figure>
+{:refdef: style="text-align: center;"}
+![image]({{ site.baseimg }}/images/quadcopter/2014-11-29-ps2-controller-interface-part-2-1.jpg)
+{:refdef}
 
 We now have a PS2 controller library which supports hotplug and allows us to control the rumble motors. The update() function takes a maximum of 270us at a time, which allows us to run plenty of other code.

@@ -50,4 +50,6 @@ Let's subtract a fraction of the accelerometer error from the gyroscope measure.
 
 All the above got implemented in a [new sketch, libraries, and a python script](https://github.com/marcv81/quadcopter/commit/054294b91dfcd15f7b4e27477f1191cab42ce879) to visualise the results as forward and down vectors. Everything works nicely and fast: 1.5ms per cycle without the accelerometer, 2.5ms with it. I had to increase the [gyroscope scale](https://github.com/marcv81/quadcopter/commit/c2154e0fea6917a0d3e4e751fef5fc0b8bea784f) to be able to keep track of the attitude when the IMU moves fast. There is a small drift on the z axis, but we can't really fix that without the magnetometer.
 
-<figure class="tmblr-full" data-orig-height="452" data-orig-width="432"><img alt="image" src="https://64.media.tumblr.com/4995c8b3773a5fad618cf4054a690f96/b4a9e28ca3d15e37-b8/s540x810/74a323c346f18c56deaa3a601c7664104edd2c33.jpg" data-orig-height="452" data-orig-width="432"></figure>
+{:refdef: style="text-align: center;"}
+![image]({{ site.baseimg }}/images/quadcopter/2013-11-30-diy-imu-part-2-attitude-from-gyroscope-and-accelerometer-1.jpg)
+{:refdef}

@@ -19,9 +19,13 @@ I first experimented on the breadboard. I discovered that **all** the inputs of 
 
 I then realised a first stripboard design.
 
-<figure class="tmblr-full" data-orig-height="261" data-orig-width="381"><img alt="image" src="https://64.media.tumblr.com/3a2f61742039e66b242689d1f4f3ce00/6fd824a252b58a4f-92/s540x810/fe6320ea337deebe71c63ec6dfc0f037b831262e.jpg" data-orig-height="261" data-orig-width="381"></figure>
+{:refdef: style="text-align: center;"}
+![image]({{ site.baseimg }}/images/quadcopter/2013-10-27-ppm-sum-stripboard-experiments-1.jpg)
+{:refdef}
 
-<figure data-orig-height="300" data-orig-width="238"><img alt="image" src="https://64.media.tumblr.com/5d19d6457a59e6c6072b4c369513bf6e/6fd824a252b58a4f-bb/s540x810/6d499292053b0a290020cf0afe50aa1a8d9cafd6.jpg" data-orig-height="300" data-orig-width="238"></figure>
+{:refdef: style="text-align: center;"}
+![image]({{ site.baseimg }}/images/quadcopter/2013-10-27-ppm-sum-stripboard-experiments-2.jpg)
+{:refdef}
 
 It worked well but I realised a few improvements could be made.
 
@@ -31,9 +35,13 @@ It worked well but I realised a few improvements could be made.
 
 With this in mind I created a new version of the stripboard.
 
-<figure class="tmblr-full" data-orig-height="261" data-orig-width="381"><img alt="image" src="https://64.media.tumblr.com/89da145ba37da3789dce3315ff06b1c5/6fd824a252b58a4f-fb/s540x810/3cf29c3ffc2b5f18aaf58d1eca9c6f9c7f214fa6.jpg" data-orig-height="261" data-orig-width="381"></figure>
+{:refdef: style="text-align: center;"}
+![image]({{ site.baseimg }}/images/quadcopter/2013-10-27-ppm-sum-stripboard-experiments-3.jpg)
+{:refdef}
 
-<figure class="tmblr-full" data-orig-height="237" data-orig-width="500"><img alt="image" src="https://64.media.tumblr.com/70764a2d67c8980c6f2ec66d2b9c4beb/6fd824a252b58a4f-f1/s540x810/9eb64d6d3f5721aa37b2b26846ca827183b0a1db.jpg" data-orig-height="237" data-orig-width="500"></figure>
+{:refdef: style="text-align: center;"}
+![image]({{ site.baseimg }}/images/quadcopter/2013-10-27-ppm-sum-stripboard-experiments-4.jpg)
+{:refdef}
 
 I swapped the two bottom tracks and moved the PPM output to provide servo wire compatibility on the Arduino side. I also added a pin on the receiver side to provide more friction and allow the use of 3 adjacent servo wires. The wiring is now much better looking and there is enough friction to secure the wires in place.
 

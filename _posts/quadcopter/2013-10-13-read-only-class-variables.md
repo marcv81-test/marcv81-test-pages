@@ -14,7 +14,9 @@ We want to provide read-only access to variables containing the computed value o
 
 I created a [test sketch](https://github.com/marcv81/quadcopter/blob/9c570266aae4dd733a1f3b401837bd41df76c613/sketches/TestReadOnly/TestReadOnly.ino) to compare these three implementations. Each implementation was tested to access two different types: an int, and a struct containing three ints. Each implementation was also tested with 1, 4, and 8 calls to retrieve the value. This was to attempt to isolate the one-off size cost and the per-call size cost. The inline accessor and const reference implementations were compared against the public variable implementation for increased code size. Performance was not monitored.
 
-<figure class="tmblr-full" data-orig-height="150" data-orig-width="500"><img alt="image" src="https://64.media.tumblr.com/39b7f96d328c2b72439890044397644f/031083498cec1f2d-42/s540x810/6830a4156eb253a6f94eed9453b396f92a417317.jpg" data-orig-height="150" data-orig-width="500"></figure>
+{:refdef: style="text-align: center;"}
+![image]({{ site.baseimg }}/images/quadcopter/2013-10-13-read-only-class-variables-1.jpg)
+{:refdef}
 
 **Findings:**
 

@@ -30,7 +30,9 @@ When the servo ISR is called it performs the required action to drive the servos
 
 Each servo cycle shall last exactly 2.5ms. For this we'll store two durations per channel: one to time the high level state, and the other to time the low level state and fill in the 2.5ms cycle.
 
-<figure class="tmblr-full" data-orig-height="319" data-orig-width="441" data-orig-src="https://64.media.tumblr.com/b8a58bdfe8c244d4e99d0afc7b46a96e/tumblr_inline_mzd8a1v86I1snd83q.jpg"><img src="https://64.media.tumblr.com/b8a58bdfe8c244d4e99d0afc7b46a96e/tumblr_inline_pk37plh1j41snd83q_540.jpg" data-orig-height="319" data-orig-width="441" data-orig-src="https://64.media.tumblr.com/b8a58bdfe8c244d4e99d0afc7b46a96e/tumblr_inline_mzd8a1v86I1snd83q.jpg"></figure>
+{:refdef: style="text-align: center;"}
+![image]({{ site.baseimg }}/images/quadcopter/2013-12-12-driving-servos-1.jpg)
+{:refdef}
 
 This was all implemented in [a library and a test sketch](https://github.com/marcv81/quadcopter/commit/20cf3c92964080e0a8e5f8eecdaf67d4c9e0fc57).
 
@@ -38,4 +40,6 @@ The test sketch rapidly sets the channel 0 to 1, 1.2, 1.4, 1.6, 1.8, or 2ms. The
 
 The results look good after adjusting the delays.
 
-<figure class="tmblr-full" data-orig-height="225" data-orig-width="500" data-orig-src="https://64.media.tumblr.com/0bf8e872cd57b085328c32ad657f8355/tumblr_inline_mxppbk44D51snd83q.jpg"><img alt="image" src="https://64.media.tumblr.com/1e891dc2163bf6bf11dc89b63c482c4d/tumblr_inline_pk37pmms3s1snd83q_540.jpg" data-orig-height="225" data-orig-width="500" data-orig-src="https://64.media.tumblr.com/0bf8e872cd57b085328c32ad657f8355/tumblr_inline_mxppbk44D51snd83q.jpg"></figure>
+{:refdef: style="text-align: center;"}
+![image]({{ site.baseimg }}/images/quadcopter/2013-12-12-driving-servos-2.jpg)
+{:refdef}

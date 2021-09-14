@@ -66,7 +66,9 @@ During 6 we do not have to actively wait, we can do whatever else as long as it 
 
 The waiting times were determined empirically with a genuine controller. My aftermarket one tolerates slightly shorter delays. The waiting times were shortened until the point where reducing them any further would result in an unreliable connection. The exact delays were then measured using a logic analyser.
 
-<figure class="tmblr-full" data-orig-height="382" data-orig-width="500" data-orig-src="https://64.media.tumblr.com/68d4a7b10e04a3fff34ed6e07fbdd156/tumblr_inline_nel6lnF84X1snd83q.jpg"><img alt="image" src="https://64.media.tumblr.com/32ede0829700206e43b3bbb48274f3b3/tumblr_inline_pk012sydOe1snd83q_540.jpg" data-orig-height="382" data-orig-width="500" data-orig-src="https://64.media.tumblr.com/68d4a7b10e04a3fff34ed6e07fbdd156/tumblr_inline_nel6lnF84X1snd83q.jpg"></figure>
+{:refdef: style="text-align: center;"}
+![image]({{ site.baseimg }}/images/quadcopter/2014-11-05-ps2-controller-interface-part-1-1.jpg)
+{:refdef}
 
 The above captures illustrates a real message with the channels in the following order.
 

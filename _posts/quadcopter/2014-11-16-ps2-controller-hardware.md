@@ -24,6 +24,8 @@ Below are the soldering points.
 
 The clock pin cannot be accessed once the 1k pull-up is mounted, so we soldered it first. Also the battery wires were too large so we made a smaller gauge extension. I used a 5V Arduino Pro Mini, maybe I would have been better of with a 3.3V one.
 
-<figure class="tmblr-full" data-orig-height="357" data-orig-width="500" data-orig-src="https://64.media.tumblr.com/5e0336dc3fc79ebe88db74ec25538f1d/tumblr_inline_nf3vtdHn681snd83q.jpg"><img alt="image" src="https://64.media.tumblr.com/93c9477c8405ebf26cf70fcac31cfd42/tumblr_inline_pkpqk2BnvZ1snd83q_540.jpg" data-orig-height="357" data-orig-width="500" data-orig-src="https://64.media.tumblr.com/5e0336dc3fc79ebe88db74ec25538f1d/tumblr_inline_nf3vtdHn681snd83q.jpg"></figure>
+{:refdef: style="text-align: center;"}
+![image]({{ site.baseimg }}/images/quadcopter/2014-11-16-ps2-controller-hardware-1.jpg)
+{:refdef}
 
 Despite some questionable soldering technique it all works fine with the [existing sketch](https://github.com/marcv81/quadcopter/tree/021c74899a0ac0c289ffa5c149bde3a148230bc4/sketches/PS2Test).

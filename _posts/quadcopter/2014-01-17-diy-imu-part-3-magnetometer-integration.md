@@ -17,7 +17,9 @@ Before anything we have to improve the HMC5883L library. The magnetometer update
 
 Now we need to capture the magnetometer data. I created a [new sketch](https://github.com/marcv81/quadcopter/commit/d76a88d8c96914c3fc5b4e54331cef7d5241450b) and a [python script](https://github.com/marcv81/quadcopter/commit/0d308edbf5c7d96256960f7ee60a3955ab571649) to visualise the acquired data. The script displays an increasing large cloud of points, which lets us know the progress. Below are the plotted results for my setup.
 
-<figure class="tmblr-full" data-orig-height="446" data-orig-width="425" data-orig-src="https://64.media.tumblr.com/bf4c293129a5d03da5b13eb42a84115c/tumblr_inline_mziltc2kTv1snd83q.jpg"><img alt="image" src="https://64.media.tumblr.com/bf4c293129a5d03da5b13eb42a84115c/tumblr_inline_pl1jjqWNv11snd83q_540.jpg" data-orig-height="446" data-orig-width="425" data-orig-src="https://64.media.tumblr.com/bf4c293129a5d03da5b13eb42a84115c/tumblr_inline_mziltc2kTv1snd83q.jpg"></figure>
+{:refdef: style="text-align: center;"}
+![image]({{ site.baseimg }}/images/quadcopter/2014-01-17-diy-imu-part-3-magnetometer-integration-1.jpg)
+{:refdef}
 
 _python MagnetometerCalibration.py \> data.csv_
 
@@ -51,7 +53,9 @@ _octave -q generate\_header.m \> config.h_
 
 Then I added a [new library](https://github.com/marcv81/quadcopter/commit/459d7193e48b6da028f21ac136d73470d3bb7970) to apply the transformations and map the magnetometer vector to a sphere. Below are the plotted results of the magnetometer data capture sketch modified to use the sphere mapping.
 
- <figure class="tmblr-full" data-orig-height="446" data-orig-width="425" data-orig-src="https://64.media.tumblr.com/381ddc54ee5c085b2010f1539b4530b5/tumblr_inline_mzind16su41snd83q.jpg"><img alt="image" src="https://64.media.tumblr.com/381ddc54ee5c085b2010f1539b4530b5/tumblr_inline_pl1jjr3vzW1snd83q_540.jpg" data-orig-height="446" data-orig-width="425" data-orig-src="https://64.media.tumblr.com/381ddc54ee5c085b2010f1539b4530b5/tumblr_inline_mzind16su41snd83q.jpg"></figure>
+{:refdef: style="text-align: center;"}
+![image]({{ site.baseimg }}/images/quadcopter/2014-01-17-diy-imu-part-3-magnetometer-integration-2.jpg)
+{:refdef}
 
 The magnetometer data is finally useable as a fixed heading reference. We can use it to correct the attitude yaw drift.
 

@@ -25,13 +25,17 @@ I put all this into a [library](https://github.com/marcv81/quadcopter/tree/3d1f3
 
 **Accelerometer**
 
-**<figure class="tmblr-full" data-orig-height="272" data-orig-width="500"><img alt="image" src="https://64.media.tumblr.com/be287f5f442dab8700944a56603d0477/4ecf2fbc3628cd19-b2/s540x810/3699c5dbd07a2d3fbbb90e0d7f40c1b82ef4a1ee.jpg" data-orig-height="272" data-orig-width="500"></figure>**
+{:refdef: style="text-align: center;"}
+![image]({{ site.baseimg }}/images/quadcopter/2013-10-07-mpu-6050-gyroscope-accelerometer-1.jpg)
+{:refdef}
 
 At rest the Z axis reads -1G. The expected value is 1G which simply means the [accelerometer](https://en.wikipedia.org/wiki/Accelerometer) is upside down. The X and Y axis are not exactly at 0 because the sensor is not perfectly horizontal.
 
 **Gyroscope**
 
-<figure class="tmblr-full" data-orig-height="249" data-orig-width="500"><img alt="image" src="https://64.media.tumblr.com/0e6e92ec2280762f9499e6b3fc1a35d5/4ecf2fbc3628cd19-0c/s540x810/99826a5c996bab0d29ffab54a7a9fed4ceff7f2e.jpg" data-orig-height="249" data-orig-width="500"></figure>
+{:refdef: style="text-align: center;"}
+![image]({{ site.baseimg }}/images/quadcopter/2013-10-07-mpu-6050-gyroscope-accelerometer-2.jpg)
+{:refdef}
 
 At rest all the axis are at 0 as expected.
 

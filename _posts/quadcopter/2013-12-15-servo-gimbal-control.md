@@ -13,7 +13,9 @@ A good way to test the few libraries we have so far is to build a servo gimbal c
 
 Let's first tape the IMU to the  arm.
 
-<figure class="tmblr-full" data-orig-height="334" data-orig-width="500" data-orig-src="https://64.media.tumblr.com/72aaa9eab20f0c44a05aab240e6f65a6/tumblr_inline_mxutz2cKYM1snd83q.jpg"><img alt="image" src="https://64.media.tumblr.com/26e78c8d0e8cc3cbe0dd94efb29efddf/tumblr_inline_pk09h1BXK91snd83q_540.jpg" data-orig-height="334" data-orig-width="500" data-orig-src="https://64.media.tumblr.com/72aaa9eab20f0c44a05aab240e6f65a6/tumblr_inline_mxutz2cKYM1snd83q.jpg"></figure>
+{:refdef: style="text-align: center;"}
+![image]({{ site.baseimg }}/images/quadcopter/2013-12-15-servo-gimbal-control-1.jpg)
+{:refdef}
 
 Before anything else we have to extract the roll, pitch, and yaw from the attitude quaternion. There are different conversion formulas depending on the rotation sequence, but in this case the angles are relatively small so we don't need to worry about the order too much. I used [this formula](https://en.wikipedia.org/wiki/Conversion_between_quaternions_and_Euler_angles#Conversion), here is [the code](https://github.com/marcv81/quadcopter/commit/fc5ebfe5639c7de99b923ec3587c71191e52d16f).
 

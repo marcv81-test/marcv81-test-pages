@@ -14,45 +14,45 @@ This post discusses a fast quaternion-based algorithm to determine the rotation 
 
 If you're still reading here is the algorithm description and explanation.
 
-- $u\_0$ and $v\_0$ are the two vectors before the rotation
-- $u\_2$ and $v\_2$ are the two vectors after the rotation
+- $u_0$ and $v_0$ are the two vectors before the rotation
+- $u_2$ and $v_2$ are the two vectors after the rotation
 
 We are looking for the rotation q which verifies the following.
 
-- $u\_0 \xrightarrow{q} u\_2$
-- $v\_0 \xrightarrow{q} v\_2$
+- $u_0 \xrightarrow{q} u_2$
+- $v_0 \xrightarrow{q} v_2$
 
 We assume that such a rotation exists. This is not generally the case.
 
-Let's decompose q into two successive rotations $q\_1$ and $q\_2$.
+Let's decompose q into two successive rotations $q_1$ and $q_2$.
 
-- $u\_0 \xrightarrow{q\_1} u\_1 \xrightarrow{q\_2} u\_2$
-- $v\_0 \xrightarrow{q\_1} v\_1 \xrightarrow{q\_2} v\_2$
+- $u_0 \xrightarrow{q_1} u_1 \xrightarrow{q_2} u_2$
+- $v_0 \xrightarrow{q_1} v_1 \xrightarrow{q_2} v_2$
 
-Let's choose $q\_1$ such that $u\_0 = u\_1$. We deduce the following.
+Let's choose $q_1$ such that $u_0 = u_1$. We deduce the following.
 
-- $q\_1$ is a rotation around the $u\_0$ axis.
-- $q\_2$ is a rotation which transforms $u\_0$ into $u\_2$.
+- $q_1$ is a rotation around the $u_0$ axis.
+- $q_2$ is a rotation which transforms $u_0$ into $u_2$.
 
-We calculate $q\_2$ from $u\_0$ and $u\_2$ using [this formula](https://lolengine.net/blog/2013/09/18/beautiful-maths-quaternion-from-vectors).  
+We calculate $q_2$ from $u_0$ and $u_2$ using [this formula](https://lolengine.net/blog/2013/09/18/beautiful-maths-quaternion-from-vectors).  
   
-We then apply the opposite of $q\_2$ rotation (i.e.: the conjugate of the quaternion) to $v\_2$ to obtain $v\_1$ using [this formula](https://molecularmusings.wordpress.com/2013/05/24/a-faster-quaternion-vector-multiplication/).  
+We then apply the opposite of $q_2$ rotation (i.e.: the conjugate of the quaternion) to $v_2$ to obtain $v_1$ using [this formula](https://molecularmusings.wordpress.com/2013/05/24/a-faster-quaternion-vector-multiplication/).  
   
-We know the following about $q\_1$.
+We know the following about $q_1$.
 
-- $q\_1$ is around the $u\_0$ axis.
-- $q\_1$ transforms $v\_0$ into $v\_1$.
+- $q_1$ is around the $u_0$ axis.
+- $q_1$ transforms $v_0$ into $v_1$.
 
-We cannot calculate $q\_1$ from $v\_0$ and $v\_1$ using the formula we used to find $q\_2$. It may not return a rotation around the $u\_0$ axis.
+We cannot calculate $q_1$ from $v_0$ and $v_1$ using the formula we used to find $q_2$. It may not return a rotation around the $u_0$ axis.
 
-Let's call $v\_0^\prime$ and $v\_1^\prime$ the projections of $v\_0$ and $v\_1$ on the plane orthogonal to $u\_0$. We calculate $v\_0^\prime$ and $v\_1^\prime$ using [this formula](https://en.wikipedia.org/wiki/Vector_projection).
+Let's call $v_0^\prime$ and $v_1^\prime$ the projections of $v_0$ and $v_1$ on the plane orthogonal to $u_0$. We calculate $v_0^\prime$ and $v_1^\prime$ using [this formula](https://en.wikipedia.org/wiki/Vector_projection).
 
-The rotation $q\_1$ around $u\_0$ which transforms $v\_0$ into $v\_1$ also transforms $v\_0^\prime$ into $v\_1^\prime$. I can't prove it formally but it's visually obvious.
+The rotation $q_1$ around $u_0$ which transforms $v_0$ into $v_1$ also transforms $v_0^\prime$ into $v_1^\prime$. I can't prove it formally but it's visually obvious.
 
-We calculate $q\_1$ from $v\_0^\prime$ and $v\_1^\prime$ using the formula we used to find $q\_2$. The axis of $q\_1$ will necessarily be $u\_0$ because $v\_0^\prime$ and $v\_1^\prime$ are in a plane orthogonal to $u\_0$.
+We calculate $q_1$ from $v_0^\prime$ and $v_1^\prime$ using the formula we used to find $q_2$. The axis of $q_1$ will necessarily be $u_0$ because $v_0^\prime$ and $v_1^\prime$ are in a plane orthogonal to $u_0$.
 
-We finally calculate q = $q\_2 q\_1$.
+We finally calculate q = $q_2 q_1$.
 
-If the vectors come from error-prone measurements q may not exist. In this case the algorithm provides a quaternion which transforms $u\_0$ into $u\_2$ and $v\_0$ into a vector "close enough" to $v\_2$. The algorithm is hence biased towards one of the pairs of vectors.
+If the vectors come from error-prone measurements q may not exist. In this case the algorithm provides a quaternion which transforms $u_0$ into $u_2$ and $v_0$ into a vector "close enough" to $v_2$. The algorithm is hence biased towards one of the pairs of vectors.
 
 The bias is a tradeoff for a fast and fixed execution time. On some applications it might actually be an advantage.

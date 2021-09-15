@@ -17,13 +17,13 @@ The IMU algorithm has been working great with separate sensors and under ideal c
 
 First I checked the IMU, motors off, using the USB serial port. I tried to visualise the orientation but the axes were incorrect. I naively expected the Multiwii board to have its axes aligned with the little painted arrow but it's not the case.
 
-I first tried to look at the Multiwii source code but it's weird. I know the MPU-6050 accelerometer and gyroscope axes are aligned in the hardware, however the [Multiwii code](https://code.google.com/p/multiwii/source/browse/trunk/MultiWii_shared/def.h) defines different axes mapping for each (for CRIUS\_SE\_v2\_0 for instance). This means Multiwii uses different axes for the accelerometer and the gyroscope: I'd be curious if someone had a good explanation!
+I first tried to look at the Multiwii source code but it's weird. I know the MPU-6050 accelerometer and gyroscope axes are aligned in the hardware, however the [Multiwii code](https://code.google.com/p/multiwii/source/browse/trunk/MultiWii_shared/def.h) defines different axes mapping for each (for CRIUS_SE_v2_0 for instance). This means Multiwii uses different axes for the accelerometer and the gyroscope: I'd be curious if someone had a good explanation!
 
 After a few tries I figured the following.
 
-- X =\> Y
-- Y =\> X
-- Z =\> -Z
+- X => Y
+- Y => X
+- Z => -Z
 
 **Motors on**
 

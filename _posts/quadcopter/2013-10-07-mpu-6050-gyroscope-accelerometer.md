@@ -10,7 +10,7 @@ tags:
 ---
 The first step to communicate with the MPU-6050 is to setup the I2C bus. The official TWI/Wire library has poor reviews so I tried the one from [DSS Circuits](https://www.dsscircuits.com/articles/arduino-i2c-master-library.html) instead. I unpacked the library into [libraries/contrib/I2C](https://github.com/marcv81/quadcopter/tree/061e2fd229f7f7cb083cbfa6e5aabdc661e4131d/libraries/contrib/I2C) for versioning purposes and copied it to ~/Documents/Arduino/libraries to be able to include it in my sketches.
 
-As a quick test I created a [new sketch](https://github.com/marcv81/quadcopter/blob/9ed9d4e792d77aa62858570bf557dabb549d7868/sketches/I2CTest/I2CTest.ino) to read the WHO\_AM\_I register. It worked without any problem, easy!
+As a quick test I created a [new sketch](https://github.com/marcv81/quadcopter/blob/9ed9d4e792d77aa62858570bf557dabb549d7868/sketches/I2CTest/I2CTest.ino) to read the WHO_AM_I register. It worked without any problem, easy!
 
 I then wanted to read actual accelerometer/gyroscope data. The [MPU-6050 Register Map](https://www.invensense.com/mems/gyro/documents/RM-MPU-6000A.pdf) tells us all we need to know. I went through most of the descriptions and chose the following initialisation sequence.
 

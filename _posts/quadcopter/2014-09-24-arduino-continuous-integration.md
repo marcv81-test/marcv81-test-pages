@@ -64,12 +64,12 @@ Once we restart we can export DISPLAY=:99 and try to compile again. Appart from 
   
 **Maven**  
   
-I quite like the combination of Maven and Jenkins: the modules are displayed nicely. Let's define our [sketches as modules of a parent project](https://github.com/marcv81/quadcopter/commit/e8f60d2aaa77a4623df398ac3cff0ceb89875ca1). For portability we rely on the ARDUINO\_HOME environment variable. We can now install Maven and compile all the sketches at once.  
+I quite like the combination of Maven and Jenkins: the modules are displayed nicely. Let's define our [sketches as modules of a parent project](https://github.com/marcv81/quadcopter/commit/e8f60d2aaa77a4623df398ac3cff0ceb89875ca1). For portability we rely on the ARDUINO_HOME environment variable. We can now install Maven and compile all the sketches at once.  
   
 sudo apt-get install maven  
 cd robokitchen/sketches  
 export DISPLAY=:99  
-export ARDUINO\_HOME=/usr/local/arduino-1.5.7/  
+export ARDUINO_HOME=/usr/local/arduino-1.5.7/  
 mvn compile  
   
 **Jenkins**  
@@ -88,10 +88,10 @@ wget [https://mirrors.jenkins-ci.org/war-stable/latest/jenkins.war](https://mirr
 sudo chown tomcat7:tomcat7 jenkins.war  
 sudo mv jenkins.war /var/lib/tomcat7/webapps/  
   
-The Jenkins URL is [https://192.168.56.10:8080/jenkins](https://192.168.56.10:8080/jenkins). Let's first go to Manage Jenkins \> Configure System \> Global properties and define the following environment variables.
+The Jenkins URL is [https://192.168.56.10:8080/jenkins](https://192.168.56.10:8080/jenkins). Let's first go to Manage Jenkins > Configure System > Global properties and define the following environment variables.
 
 - DISPLAY=:99
-- ARDUINO\_HOME=/usr/local/arduino-1.5.7/
+- ARDUINO_HOME=/usr/local/arduino-1.5.7/
 
 On the same screen we should define a Maven installation. On Ubuntu Server 14.04.1 LTS the default is Maven 3.0.5 installed in /usr/share/maven/. Now is a good time to install the GitHub plugin and restart Jenkins. We finally have all we need to create a Maven job. The main parameters are as follows.
 

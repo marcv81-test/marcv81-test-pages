@@ -52,7 +52,7 @@ In order to acquire as many samples as fast as possible, I setup a camera on a t
 ![image]({{ site.baseimg }}/images/quadcopter/2014-09-15-lift-force-measurement-4.jpg)
 {:refdef}
 
-f(x) = 0.00118415\*x + 0.30756716
+f(x) = 0.00118415*x + 0.30756716
 
 The linear RPMs estimate leads to the following quadratic force estimate. Again it's not too bad, especially if we exclude the extremely high PWM values.
 

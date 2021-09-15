@@ -15,14 +15,14 @@ I uncluttered the repository a bit. I removed the sketches which were no longer 
 
 The IMU is configured using the following flags:
 
-- IMU\_ACCEL\_ENABLE: if defined the accelerometer is used as a fixed reference vector to prevent attitude drift
-- IMU\_MAGNET\_ENABLE: if defined the magnetometer is used as a fixed reference vector to prevent attitude drift
-- IMU\_GYRO\_CALIBRATION: if defined the gyroscope is dynamically calibrated when the sketch starts
-- IMU\_MAGNET\_CALIBRATION: if defined the magnetometer is statically calibrated using the output of octave/magnet\_calibration/generate\_header.m
+- IMU_ACCEL_ENABLE: if defined the accelerometer is used as a fixed reference vector to prevent attitude drift
+- IMU_MAGNET_ENABLE: if defined the magnetometer is used as a fixed reference vector to prevent attitude drift
+- IMU_GYRO_CALIBRATION: if defined the gyroscope is dynamically calibrated when the sketch starts
+- IMU_MAGNET_CALIBRATION: if defined the magnetometer is statically calibrated using the output of octave/magnet_calibration/generate_header.m
 
 The steps to calibrate the magnetometer are:
 
 - Upload sketch-test/IMUTest with the magnetometer calibration disabled
-- Run: _python Magnetometer.py \> ../../octave/magnet\_calibration/data.csv_
-- In octave/magnet\_calibration run: _octave -q generate\_header.m_
+- Run: _python Magnetometer.py > ../../octave/magnet_calibration/data.csv_
+- In octave/magnet_calibration run: _octave -q generate_header.m_
 - Upload sketch-test/IMUTest with the output of the previous command in the config.h

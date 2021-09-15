@@ -21,15 +21,15 @@ Now we need to capture the magnetometer data. I created a [new sketch](https://g
 ![image]({{ site.baseimg }}/images/quadcopter/2014-01-17-diy-imu-part-3-magnetometer-integration-1.jpg)
 {:refdef}
 
-_python MagnetometerCalibration.py \> data.csv_
+_python MagnetometerCalibration.py > data.csv_
 
 Yury Petrov wrote an [Octave script](https://www.mathworks.co.uk/matlabcentral/fileexchange/24693-ellipsoid-fit) which computes the parameters of the closest ellipsoid to a list of points using the least mean squares method. I don't have Octave, let's install it via Macports. The official documentation recommends to run "_sudo port install octave +atlas+docs_" but that didn't work for me. I ran "_sudo port install octave +atlas_" which did the trick.
 
 The script returns the following ellipsoid parameters.
 
 - Ellipsoid center $\vec{v}$  
-- Ellipsoid radii $\vec{r} = \begin{bmatrix}r\_a \\ r\_b \\ r\_c \end{bmatrix}$
-- Ellipsoid radii vectors $\vec{a}$, $\vec{b}$, $\vec{c}$ in matrix form $R = \begin{bmatrix}a\_x & b\_x & c\_x \\ a\_y & b\_y & c\_y \\ a\_z & b\_z & c\_z\end{bmatrix}$
+- Ellipsoid radii $\vec{r} = \begin{bmatrix}r_a \\ r_b \\ r_c \end{bmatrix}$
+- Ellipsoid radii vectors $\vec{a}$, $\vec{b}$, $\vec{c}$ in matrix form $R = \begin{bmatrix}a_x & b_x & c_x \\ a_y & b_y & c_y \\ a_z & b_z & c_z\end{bmatrix}$
 
 **Hard iron distortion**
 
@@ -39,17 +39,17 @@ In order to compensate for the hard iron distortion we simply subtract $\vec{v}$
 
 In the reference frame defined by $\vec{a}$, $\vec{b}$, $\vec{c}$, the centered ellipsoid (i.e.: after correcting the hard iron distortion) is aligned with the axes. In this reference frame the scaling transformation to map the aligned ellipsoid to a sphere can be written as follows.
 
-\[S\_{abc} = \begin{bmatrix}1/r\_a & 0 & 0 \\ 0 & 1/r\_b & 0 \\ 0 & 0 & 1/r\_c\end{bmatrix}\]
+\[S_{abc} = \begin{bmatrix}1/r_a & 0 & 0 \\ 0 & 1/r_b & 0 \\ 0 & 0 & 1/r_c\end{bmatrix}\]
 
 By definition R is the rotation matrix which transform the axes $\vec{x}$, $\vec{y}$, $\vec{z}$ into $\vec{a}$, $\vec{b}$, $\vec{c}$. The transpose matrix $R^T$ is the opposite rotation. So the scaling matrix in the $\vec{x}$, $\vec{y}$, $\vec{z}$ reference frame can be written as follows.
 
-\[S = R \times ( S\_{abc} \times R^T)\]
+\[S = R \times ( S_{abc} \times R^T)\]
 
 The corrected value is $\vec{x}^{\prime\prime} = S \times \vec{x}^\prime = S \times (\vec{x} - \vec{v})$.
 
 I included the above math in an [Octave script](https://github.com/marcv81/quadcopter/commit/aa85b2a5960ee59be0ebe3623306059822be1190) which generates a configuration header containing 12 parameters: 3 for the hard iron vector and 9 for the soft iron matrix.
 
-_octave -q generate\_header.m \> config.h_
+_octave -q generate_header.m > config.h_
 
 Then I added a [new library](https://github.com/marcv81/quadcopter/commit/459d7193e48b6da028f21ac136d73470d3bb7970) to apply the transformations and map the magnetometer vector to a sphere. Below are the plotted results of the magnetometer data capture sketch modified to use the sphere mapping.
 

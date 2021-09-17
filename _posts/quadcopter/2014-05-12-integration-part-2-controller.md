@@ -60,7 +60,7 @@ The most simple mode to implement is the [rate mode](https://github.com/marcv81/
 
 We tuned these controllers as PDs. I held the quadcopter above me, with a hand at the extremity of two opposed booms, and I controlled the transmitter with my feet. A proper test rig would have been more appropriate.
 
-First we set $K_d$ to zero and increase $K_p$ progressively until we get light oscillations. Then we increase $K_d$ progressively until the oscillations dampen, but we stop before the quadcopter gets twitchy. We obtained $K_p = 150$ and $K_d = 8$.
+First we set $$K_d$$ to zero and increase $$K_p$$ progressively until we get light oscillations. Then we increase $$K_d$$ progressively until the oscillations dampen, but we stop before the quadcopter gets twitchy. We obtained $$K_p = 150$$ and $$K_d = 8$$.
 
 **Yaw rate**
 
@@ -68,7 +68,7 @@ The yaw rate controller ensures the rotation rate on the yaw axis is proportiona
 
 We tuned this controller as a simple P. Because the motors torque control the yaw +4 quasdcopters aren't too responsive on this axis, so using only P shall be good enough. I simply put the quadcopter on the floor and tried to yaw.
 
-We increased $K_p$ progressively until the response felt acceptable. We couldn't reach oscillations. We obtained $K_p = 500$.
+We increased $$K_p$$ progressively until the response felt acceptable. We couldn't reach oscillations. We obtained $$K_p = 500$$.
 
 **Roll and pitch angles (attitude mode)**
 
@@ -76,7 +76,7 @@ The [attitude mode](https://github.com/marcv81/quadcopter/commit/592156a8373c525
 
 We tuned these new controllers as PIs. They were tuned while flying.
 
-First we set $K_i$ to zero and increase $K_p$ progressively until we get light oscillations. We then reduce $K_p$ until the quadcopter is stable again. We now increase $K_i$ until we get light oscillations, and reduce $K_i$ until the quadcopter is stable again. We got $K_p = 5$, $K_i = 20$.
+First we set $$K_i$$ to zero and increase $$K_p$$ progressively until we get light oscillations. We then reduce $$K_p$$ until the quadcopter is stable again. We now increase $$K_i$$ until we get light oscillations, and reduce $$K_i$$ until the quadcopter is stable again. We got $$K_p = 5$$, $$K_i = 20$$.
 
 **Performance**
 

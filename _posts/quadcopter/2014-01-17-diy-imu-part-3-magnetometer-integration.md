@@ -27,25 +27,25 @@ Yury Petrov wrote an [Octave script](https://www.mathworks.co.uk/matlabcentral/f
 
 The script returns the following ellipsoid parameters.
 
-- Ellipsoid center $\vec{v}$  
-- Ellipsoid radii $\vec{r} = \begin{bmatrix}r_a \\ r_b \\ r_c \end{bmatrix}$
-- Ellipsoid radii vectors $\vec{a}$, $\vec{b}$, $\vec{c}$ in matrix form $R = \begin{bmatrix}a_x & b_x & c_x \\ a_y & b_y & c_y \\ a_z & b_z & c_z\end{bmatrix}$
+- Ellipsoid center $$\vec{v}$$  
+- Ellipsoid radii $$\vec{r} = \begin{bmatrix}r_a \\ r_b \\ r_c \end{bmatrix}$$
+- Ellipsoid radii vectors $$\vec{a}$$, $$\vec{b}$$, $$\vec{c}$$ in matrix form $$R = \begin{bmatrix}a_x & b_x & c_x \\ a_y & b_y & c_y \\ a_z & b_z & c_z\end{bmatrix}$$
 
 **Hard iron distortion**
 
-In order to compensate for the hard iron distortion we simply subtract $\vec{v}$ from the magnetometer vector $\vec{x}$. The corrected value is $\vec{x}^\prime = \vec{x} - \vec{v}$.
+In order to compensate for the hard iron distortion we simply subtract $$\vec{v}$$ from the magnetometer vector $$\vec{x}$$. The corrected value is $$\vec{x}^\prime = \vec{x} - \vec{v}$$.
 
 **Soft iron distortion**
 
-In the reference frame defined by $\vec{a}$, $\vec{b}$, $\vec{c}$, the centered ellipsoid (i.e.: after correcting the hard iron distortion) is aligned with the axes. In this reference frame the scaling transformation to map the aligned ellipsoid to a sphere can be written as follows.
+In the reference frame defined by $$\vec{a}$$, $$\vec{b}$$, $$\vec{c}$$, the centered ellipsoid (i.e.: after correcting the hard iron distortion) is aligned with the axes. In this reference frame the scaling transformation to map the aligned ellipsoid to a sphere can be written as follows.
 
-\[S_{abc} = \begin{bmatrix}1/r_a & 0 & 0 \\ 0 & 1/r_b & 0 \\ 0 & 0 & 1/r_c\end{bmatrix}\]
+$$S_{abc} = \begin{bmatrix}1/r_a & 0 & 0 \\ 0 & 1/r_b & 0 \\ 0 & 0 & 1/r_c\end{bmatrix}$$
 
-By definition R is the rotation matrix which transform the axes $\vec{x}$, $\vec{y}$, $\vec{z}$ into $\vec{a}$, $\vec{b}$, $\vec{c}$. The transpose matrix $R^T$ is the opposite rotation. So the scaling matrix in the $\vec{x}$, $\vec{y}$, $\vec{z}$ reference frame can be written as follows.
+By definition R is the rotation matrix which transform the axes $$\vec{x}$$, $$\vec{y}$$, $$\vec{z}$$ into $$\vec{a}$$, $$\vec{b}$$, $$\vec{c}$$. The transpose matrix $$R^T$$ is the opposite rotation. So the scaling matrix in the $$\vec{x}$$, $$\vec{y}$$, $$\vec{z}$$ reference frame can be written as follows.
 
-\[S = R \times ( S_{abc} \times R^T)\]
+$$S = R \times ( S_{abc} \times R^T)$$
 
-The corrected value is $\vec{x}^{\prime\prime} = S \times \vec{x}^\prime = S \times (\vec{x} - \vec{v})$.
+The corrected value is $$\vec{x}^{\prime\prime} = S \times \vec{x}^\prime = S \times (\vec{x} - \vec{v})$$.
 
 I included the above math in an [Octave script](https://github.com/marcv81/quadcopter/commit/aa85b2a5960ee59be0ebe3623306059822be1190) which generates a configuration header containing 12 parameters: 3 for the hard iron vector and 9 for the soft iron matrix.
 

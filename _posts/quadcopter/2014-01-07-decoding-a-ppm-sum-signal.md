@@ -34,7 +34,7 @@ The refresh() function parses the available frame all at once and stores the res
 - The available frame contains the expected number of channels.
 - The duration of each channel is between 1ms and 2ms.
 
-The channel durations are converted to signed bytes (between -128 and 127). There is no loss of precision because the timer 0 precision is $4\mu s$, and $(2000-1000) \div 4 = 250$, which fits nicely into 8 bits. The value 0x80 is reserved for read errors.
+The channel durations are converted to signed bytes (between -128 and 127). There is no loss of precision because the timer 0 precision is $$4\mu s$$, and $$(2000-1000) \div 4 = 250$$, which fits nicely into 8 bits. The value 0x80 is reserved for read errors.
 
 The interrupt service routine does not execute instantly and we could use constants to fix the timing, but we can just trim the transmitter instead.
 

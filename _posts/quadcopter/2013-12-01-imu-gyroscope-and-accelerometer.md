@@ -8,6 +8,6 @@ tags:
 - accelerometer
 - test
 ---
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6IX_dN-b1Qo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% include youtube.html id="6IX_dN-b1Qo" %}
 
 IMU with gyroscope and accelerometer. I ran the same tests as with the gyroscope only. There is no pitch/roll error at the end, only a slight yaw error which could only be fixed using a magnetometer.

@@ -7,6 +7,6 @@ tags:
 - gyroscope
 - test
 ---
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hJehbfprpMc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% include youtube.html id="hJehbfprpMc" %}
 
 IMU with gyroscope only. I tested the three axes independently first, then I gave it a shake to see how it would cope. A slight error is visible on all the axes at the end.

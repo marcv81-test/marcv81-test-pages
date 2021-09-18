@@ -9,6 +9,6 @@ tags:
 - gimbal
 - openloop
 ---
-<iframe width="560" height="315" src="https://www.youtube.com/embed/N-UHSc61mtY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% include youtube.html id="N-UHSc61mtY" %}
 
 Open loop servo gimbal control. The IMU is fixed the the (imaginary) vehicle. The controller drives the servos to compensate for the IMU roll and pitch. I first moved slowly to test the precision, then fast to test the response speed.
